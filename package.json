@@ -1,0 +1,21 @@
+{
+  "name": "xml-js-cli",
+  "version": "1.0.0",
+  "description": "Self contained CLI version of xml-js",
+  "main": "index.js",
+  "author": "Thiago Oliveira <thiago_ogt@outlook.com>",
+  "scripts": {
+    "test": "mocha test/test.js",
+    "build": "yarn build:windows && yarn build:linux",
+    "build:windows": "nexe index.js -t win-x64-8.16.0   -o binaries/windows/xml-js",
+    "build:linux": "nexe   index.js -t linux-x64-8.16.0 -o binaries/linux/xml-js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "xml-js": "^1.6.11"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.0",
+    "nexe": "^3.3.2"
+  }
+}
